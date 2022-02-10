@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Pierre-Feuille-Ciseaux</title>
+</head>
+
+<body>
+    <header>
+        <!-- Navbar contenant les logos et le logo utilisateur (s'il veut se connecter et connaître ses stats) -->
+        <nav>
+            <ul id="menu" class="topnav">
+                <li><a href=""><img id="logoFunko" src="assets/img/Funko.svg" alt="image du logo de Funko" /></a></li>
+                <li><a href=""><img id="logoMarvel" src="assets/img/Marvel.jpg" alt="image du logo de Marvel" /></a>
+                </li>
+                <li><a href=""><img id="logoUser" src="assets/img/user-account-circle.png"
+                            alt="icone compte utilisateur" /></a></li>
+            </ul>
+            <div id="burgerMenu" title="Afficher/Masquer le Menu"><i id="burger" class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+    <main>
+        <div id="container">
+            <form action="#">
+              <h1 id="subscribe">INSCRIS-TOI</h1>
+              <div>
+                <label for="pseudo"> Choisis ton pseudo :</label>
+                <input id="pseudo" type="text" name="pseudo" required />
+              </div>
+              <div>
+                <h2 id="avatar">Choisis ton avatar :</h2>
+                <div id="row1">
+                  <div id="blackWidow">
+                    <input type="radio" name="drone" value="blackWidow" /> 
+                    <label for="blackWidow"><img class="avatar" alt="Avatar Black Widow" src="assets/img/icon_BW.png" /></label> 
+                  </div>
+                  <div id="captainAmerica">
+                    <input type="radio" name="drone" value="captainAmerica" /> 
+                    <label for="captainAmerica"><img class="avatar" alt="Avatar Captain America" src="assets/img/icon_CM.png" /></label> 
+                  </div>
+                  <div id="hawkeye">
+                    <input type="radio" name="drone" value="hawkeye" /> 
+                    <label for="hawkeye"><img class="avatar" alt="Avatar Hawkeye" src="assets/img/icon_hawkeye.png" /></label> 
+                  </div>   
+                </div>
+              </div>
+              <div id="row2">
+                <div id="Hulk">
+                  <input type="radio" name="drone" value="Hulk" /> 
+                  <label for="Hulk"><img class="avatar" alt="Avatar Hulk" src="assets/img/icon_Hulk.png" /></label> 
+                </div>
+                <div id="ironMan">
+                  <input type="radio" name="drone" value="ironMan" /> 
+                  <label for="ironMan"><img class="avatar" alt="Avatar Iron Man" src="assets/img/icon_IM.png" /></label> 
+                </div>
+                <div id="thor">
+                  <input type="radio" name="drone" value="thor" /> 
+                  <label for="thor"><img class="avatar" alt="Avatar Thor" src="assets/img/icon_Thor.png" /></label> 
+                </div>
+              </div>
+              <div>
+                <label for="email"> Adresse e-mail :</label>
+                <input id="email" type="text" name="email" placeholder="E-mail" required />
+              </div>
+              <div>
+                <label for="password"> Mot de passe :</label>
+                <input id="password" type="text" name="password" placeholder="Mot de passe" required />
+              </div>
+              <div id="buttonForm">
+                <input id="submit" type="button" value="Envoyer" />
+              </div>
+            </form>
+        </div>
+        <!-- Contenant le jeu avec titre et choix du joueur, ainsi que le score et le résultat de la partie jouée -->
+        <h1>Pierre Feuille Ciseaux <i class="far fa-question-circle"
+                alt="La pierre bat les ciseaux. Les ciseaux battent la feuille. La feuille bat la pierre."
+                title="La pierre bat les ciseaux.&#x0aLes ciseaux battent la feuille.&#x0aLa feuille bat la pierre.&#x0aLe premier arrivé à 3 a gagné"></i>
+        </h1>
+        <section>
+            <div id="choice">
+                <h2>Choisis entre pierre, feuille et ciseaux</h2>
+            </div>
+            <div id="score">
+                <div class="player">
+                    <img class="userimg" src="assets/img/user-account-circle.png" alt="icône repéresentant l'avatar de l'utilisateur">
+                    <div id="playerScore">0</div>
+                </div>
+                <div class="computer">
+                    <div id="comScore">0</div>
+                    <img class="userimg" src="assets/img/ultron-icon.png" alt="icône représentant Ultron">
+                </div>
+            </div>
+
+            <div id="playerSelect">
+                <div id="rock" class="button">
+                    <img src="assets/img/la-chose-pop.png" alt="figurine Funko pop de La Chose">
+                    <h2>pierre</h2>
+                </div>
+
+                <div id="paper" class="button"><img src="assets/img/groot-pop.png" alt="figurine Funko pop de Groot">
+                    <h2>feuille</h2>
+                </div>
+                <div id="scissors" class="button"><img src="assets/img/wolverine-pop.png" alt="figurine Funko pop de Wolverine">
+                    <h2>ciseaux</h2>
+                </div>
+            </div>
+
+            <!-- RESULT ET FINISH en display none ça apparait après le clic sur l image -->
+
+            <div id="result">
+                <div id="imgChoice">
+                    <div class="playerChoice">
+                        <img id="pImg" src="assets/img/la-chose-pop.png" alt="figurine Funko pop de La Chose">
+                        <p>Moi</p>
+                    </div>
+                    <div class="comChoice">
+                        <img id="cImg" src="assets/img/groot-pop.png" alt="figurine Funko pop de Groot">
+                        <p>L'ordinateur</p>
+                    </div>
+                </div>
+                <button id="validate">Continuer</button>
+            </div>
+
+            <div id="finish">
+                <div id="winOrLose">
+                    <div id="win">
+                        <h2>GAGNE ! Vous avez defendu la Terre face a la menace d'Ultron</h2>
+                        <audio id="audio" src="assets/media/avengers-suite-theme.mp3" autoplay></audio>
+                        <div class="avengers">
+                            <img src="assets/img/HEYES.png" alt="figurine heyes">
+                            <img src="assets/img/Hulk.png" alt="figurine hulk">
+                            <img src="assets/img/IM.png" alt="figurine iron man">
+                            <img src="assets/img/CM.png" alt="figurine captain marvel">
+                            <img src="assets/img/Thor.png" alt="figurine thor">
+                            <img src="assets/img/BW.png" alt="figurine blackWidow">
+                        </div>
+                    </div>
+                    <div id="lose">
+                        <h2>PERDU ! Vous n'avez pas defendu la Terre face a la menace d'Ultron</h2>
+                    </div>
+                   
+                </div>
+                <button id="restart">Redémarrer</button>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+
+        <!-- Footer contenant les liens vers les 2 sites "partenaires" ainsi que vers leurs réseaux sociaux -->
+        <div id="funkoMedias">
+            <a href="https://www.funko.com/"><img  class="fkblack" src="assets/img/Funko_Black.png" alt="logo Funko renvoyant vers le site de Funko" title="https://www.funko.com/"></a>
+            <img class="qrF" src="assets/img/qrcode_funkoeurope.com.png" alt="Qrcode renvoyant vers le site web de Funko">
+            <div class="social">
+                <a href="https://twitter.com/OriginalFunko"><img  class="twt" src="assets/img/TWITTER.png" alt="logo twitter renvoyant vers le twitter de Funko"></a>
+                <a href="https://www.facebook.com/originalfunko"><img  class="fb" src="assets/img/FACE2BOOK.png" alt="logo Facebook renvoyant vers le Facebook de Funko"></a>
+                <a href="https://www.youtube.com/channel/UCiBxZWamaDdlemljJ3aGPZQ"><img class="Youtube"  src="assets/img/Youtubelog.png" alt="logo Youtube renvoyant vers le Youtube de Funko"></a>
+            </div>
+        </div>
+        <div id="marvelMedias">
+            <a href="https://www.marvel.com/"><img class="marvelog" src="assets/img/Marvel.jpg" alt="logo Marvel renvoyant vers le site de Marvel" title="https://www.marvel.com/" ></a>
+            <img class="qrM" src="assets/img/qrcode_www.marvel.com.png" alt="Qrcode renvoyant vers le site web de Marvel">
+            <div class="social">
+                <a href="https://twitter.com/marvel"><img  class="twt" src="assets/img/TWITTER.png" alt="logo Twitter renvoyant vers le Twitter de Marvel"></a>
+                <a href="https://www.facebook.com/Marvel/"><img  class="fb" src="assets/img/FACE2BOOK.png" alt="logo Facebook renvoyant vers le Facebook de Marvel"></a>
+            <a href="https://www.youtube.com/user/MARVEL"><img class="Youtube" src="assets/img/Youtubelog.png" alt="logo Youtube renvoyant vers le Youtube de Marvel"></a>
+            </div>  
+
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/8bafb0437c.js" crossorigin="anonymous"></script>
+    <script src="assets/js/script2.js"></script>
+</body>
+
+</html>
